@@ -7,6 +7,8 @@ Kafka Docker Images.
 docker build -t kafka_docker_images .
 ```
 
+## Run Docker Container
+
 Then run the Docker container:
 
 ```bash
