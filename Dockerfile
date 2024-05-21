@@ -17,9 +17,14 @@ EXPOSE 2181 9092
 ENV KAFKA_HOME=/opt/kafka
 ENV PATH=${PATH}:${KAFKA_HOME}/bin
 ENV ZOOKEEPER_CONNECT=zookeeper:2181
-ENV KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+ENV KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://0.tcp.ngrok.io:xxxxx
 
 COPY config/zookeeper.properties ${KAFKA_HOME}/config/zookeeper.properties
 COPY config/server.properties ${KAFKA_HOME}/config/server.properties
+
+VOLUME ["/var/lib/zookeeper", "/var/lib/kafka"]
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+  CMD curl -f http://localhost:9092/ || exit 1
 
 CMD ["sh", "-c", "zookeeper-server-start.sh ${KAFKA_HOME}/config/zookeeper.properties & kafka-server-start.sh ${KAFKA_HOME}/config/server.properties"]
