@@ -4,9 +4,11 @@ Kafka Docker Images.
 ## Bash Script
 
 Run the following:
+
 ```bash
 chmod +x kafka_broker.sh
-./kafka_broker.sh 
+./kafka_broker.sh
+```
 
 ## Run Docker Image
 
