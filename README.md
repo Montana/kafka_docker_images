@@ -81,4 +81,4 @@ tail -f /dev/null
 ## Copyright
 
 * Michael Mendy (c) 2024
-* Travis CI, GmBH (c) 2024
+* Travis CI, GmbH (c) 2024
