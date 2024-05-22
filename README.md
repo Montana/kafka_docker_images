@@ -45,14 +45,14 @@ RUN apt-get update && apt-get install -y curl unzip && \
     echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | tee /etc/apt/sources.list.d/ngrok.list && \
     apt-get update && apt-get install -y ngrok
 
-COPY start.sh /usr/local/bin/start.sh
+COPY ngrok_kafka_start.sh /usr/local/bin/start.sh
 
-RUN chmod +x /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/ngrok_kafka_start.sh
 
 EXPOSE 9092
 EXPOSE 4040
 
-CMD ["/usr/local/bin/start.sh"]
+CMD ["/usr/local/bin/ngrok_kafka_start.sh"]
 ```
 _Worth noting you can use `node:16-slim` in the `Dockerfile`_.
 
