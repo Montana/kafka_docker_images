@@ -33,6 +33,10 @@ docker run -d --name kafka-ngrok -p 9092:9092 -p 4040:4040 kafka-ngrok
 
 2. Access the ngrok dashboard to get the public URL for Kafka by visiting `http://localhost:4040` in your browser.
 
+
+<br>![output](https://github.com/Montana/kafka_docker_images/assets/20936398/7ad26537-7eb7-4ee8-bdd8-33a6fa3fac8f)</br>
+_Flowchart illustrated by Michael Mendy_.
+
 ## Dockerfile
 
 The Dockerfile sets up Kafka and ngrok in a single container:
